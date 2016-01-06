@@ -1,0 +1,5 @@
+vendor
+src
+.idea
+application/config/database.php
+application/config/keys.php

@@ -1,0 +1,27 @@
+{
+    "name": "tomwright/flickr-image-library",
+    "description": "",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "whirlpool",
+        "mvc"
+    ],
+    "authors": [
+        {
+            "name": "Tom Wright",
+            "email": "contact@tomwright.me",
+            "homepage": "http://tpwright.me"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "whirlpool/framework": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TomWright\\": "TomWright/"
+        }
+    }
+}
