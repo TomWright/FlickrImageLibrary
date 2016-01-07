@@ -507,16 +507,16 @@
         },
         {
             "name": "whirlpool/framework",
-            "version": "0.0.19",
+            "version": "0.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TomWright/Whirlpool.git",
-                "reference": "850b88ca47b0ce7c62a64f6eebc36747d5e59bbb"
+                "reference": "2e5570f5b51efceade3b303960066768789a8633"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TomWright/Whirlpool/zipball/850b88ca47b0ce7c62a64f6eebc36747d5e59bbb",
-                "reference": "850b88ca47b0ce7c62a64f6eebc36747d5e59bbb",
+                "url": "https://api.github.com/repos/TomWright/Whirlpool/zipball/2e5570f5b51efceade3b303960066768789a8633",
+                "reference": "2e5570f5b51efceade3b303960066768789a8633",
                 "shasum": ""
             },
             "require": {
@@ -546,7 +546,7 @@
                 "mvc",
                 "whirlpool"
             ],
-            "time": "2016-01-05 23:55:17"
+            "time": "2016-01-07 12:15:34"
         }
     ],
     "packages-dev": [],
