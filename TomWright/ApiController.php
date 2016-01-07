@@ -60,10 +60,10 @@ abstract class ApiController extends BaseController
     /**
      * Send an API response. Just an easy way to set a response code and json encode the output.
      *
-     * @param array $data
+     * @param array|object|mixed $data
      * @param int $responseCode
      */
-    protected function respond(array $data, $responseCode = 200)
+    protected function respond($data, $responseCode = 200)
     {
         http_response_code($responseCode);
         echo json_encode($data);
