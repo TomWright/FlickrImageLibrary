@@ -35,4 +35,4 @@ define('REGEX_DIGIT', '\d+');
 
 $r->addRoute('GET', '/', 'home@helloWorld');
 
-$r->addRoute('GET', '/images/fetch/{limit:' . REGEX_DIGIT . '}/{offset:' . REGEX_DIGIT . '}', 'flickr@fetchImages');
+$r->addRoute('GET', '/images/fetch/{page:' . REGEX_DIGIT . '}/{perpage:' . REGEX_DIGIT . '}', 'flickr@fetchRecentImages');
