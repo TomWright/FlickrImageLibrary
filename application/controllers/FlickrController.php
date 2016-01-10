@@ -33,7 +33,7 @@ class FlickrController extends ApiController
      */
     public function fetchRecentImagesAction($page = 1, $perPage = 10)
     {
-        $response = $this->flickrApi->getRecentPhotos($page, $perPage, array('owner_name', 'date_upload', 'description'));
+        $response = $this->flickrApi->getRecentPhotos($page, $perPage, array('owner_name', 'date_upload', 'description', 'url_z', 'url_m'));
 
         $this->respond($response);
     }

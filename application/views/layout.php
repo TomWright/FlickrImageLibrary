@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {% block head %}
-        <link rel="stylesheet" href="/css/style.css" />
         <title>
             {% block title %}Flickr Image Library{% endblock %}
         </title>
+        {% block headStyles %}
+            <link rel="stylesheet" href="/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="/css/style.css" />
+        {% endblock %}
+        {% block headScripts %}
+            <script src="/js/jquery-1.12.0.min.js"></script>
+            <script src="/js/bootstrap.min.js"></script>
         {% endblock %}
     </head>
     <body>
-        {% include 'partials/header.php' %}
+        <section id="sidebar" class="col-md-3">
+            {% include 'partials/header.php' %}
 
-        {% include 'partials/filters.php' %}
-        <content id="content">
+            {% include 'partials/filters.php' %}
+
+            <footer id="footer">
+                <a href="https://github.com/TomWright">Tom Wright</a> - Flickr Image Library
+            </footer>
+        </section>
+
+        <section id="mainContentSection" class="col-md-9">
             {% block content %}{% endblock %}
-        </content>
-        <footer id="footer">
-            {% block footer %}
-            <a href="https://github.com/TomWright">Tom Wright</a> - Flickr Image Library
-            {% endblock %}
-        </footer>
+        </section>
+
+        {% block bodyStyles %}
+            <link rel="stylesheet" href="/css/style.css" />
+        {% endblock %}
+        {% block bodyScripts %}
+            <script src="/js/imagesloaded.pkgd.min.js"></script>
+            <script src="/js/masonry.pkgd.min.js"></script>
+            <script src="/js/main.js"></script>
+        {% endblock %}
     </body>
 </html>

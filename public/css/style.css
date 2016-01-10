@@ -1,0 +1,32 @@
+body {
+    background-color: #f3f3f3;
+    color: #aeacb0;
+}
+
+body h1,
+body h2,
+body h3 {
+    color: #b6e7e3;
+}
+
+section#sidebar {
+    color: #c2c2c3;
+    height: 100vh;
+    background: #68696b url("/img/sidebar_bg.jpg") no-repeat center top;
+    background-size: cover;
+}
+
+div#imagesContainer {
+    position: relative;
+}
+
+div#imagesContainer div.image.grid-item {
+    width: 30%;
+    position: relative;
+    border: 1px solid #adb1b6;
+    margin-bottom: 10px;
+}
+
+div#imagesContainer div.image.grid-item img {
+    width: 100%;
+}
