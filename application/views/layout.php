@@ -14,7 +14,7 @@
         {% endblock %}
     </head>
     <body>
-        <section id="sidebar" class="col-md-3">
+        <section id="sidebar" class="col-md-3 fixed-position">
             {% include 'partials/header.php' %}
 
             {% include 'partials/filters.php' %}
@@ -24,7 +24,7 @@
             </footer>
         </section>
 
-        <section id="mainContentSection" class="col-md-9">
+        <section id="mainContentSection" class="col-md-9 normal-scrollable">
             {% block content %}{% endblock %}
         </section>
 
@@ -34,6 +34,8 @@
         {% block bodyScripts %}
             <script src="/js/imagesloaded.pkgd.min.js"></script>
             <script src="/js/masonry.pkgd.min.js"></script>
+            <script src="/js/jquery.waypoints.min.js"></script>
+            <script src="/js/inview.js"></script>
             <script src="/js/main.js"></script>
         {% endblock %}
     </body>

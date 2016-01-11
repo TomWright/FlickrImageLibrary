@@ -1,5 +1,15 @@
+.fixed-position {
+    position: fixed;
+    width: 25%;
+}
+
+.normal-scrollable {
+    float: right;
+    width: 75%;
+}
+
 body {
-    background-color: #f3f3f3;
+    background-color: #ffffff;
     color: #aeacb0;
 }
 
@@ -9,9 +19,13 @@ body h3 {
     color: #b6e7e3;
 }
 
+section#mainContentSection {
+    padding-bottom: 10px;
+}
+
 section#sidebar {
     color: #c2c2c3;
-    height: 100vh;
+    height: 100%;
     background: #68696b url("/img/sidebar_bg.jpg") no-repeat center top;
     background-size: cover;
 }
@@ -29,4 +43,18 @@ div#imagesContainer div.image.grid-item {
 
 div#imagesContainer div.image.grid-item img {
     width: 100%;
+}
+
+#loadingBar {
+    text-align: center;
+    display: block;
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+
+#loadingBar img {
+    display: block;
+    width: 40px;
+    margin: 0 auto 10px auto;
 }

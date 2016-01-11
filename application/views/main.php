@@ -10,6 +10,9 @@
         Welcome on my awesome homepage.
     </p>
     <div id="imagesContainer" class="grid"></div>
+    <div id="loadingBar">
+        <img src="/img/loading_spinner_circle.gif" alt="Loading">
+    </div>
 {% endblock %}
 
 {% block headStyles %}

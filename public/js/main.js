@@ -6,7 +6,6 @@ $.fn.masonryImagesReveal = function( $items ) {
     // append to container
     this.append( $items );
     $items.imagesLoaded().progress( function( imgLoad, image ) {
-        console.log('here');
         // get item
         // image is imagesLoaded class, not <img>, <img> is image.img
         var $item = $( image.img ).parents( itemSelector );
@@ -20,27 +19,49 @@ $.fn.masonryImagesReveal = function( $items ) {
 };
 
 // The page of images that we are on.
-var currentPage = 1;
+var currentPage = 0;
 
 // The number of images to show on the page by default.
-var perPage = 10;
+var perPage = 15;
 
-var $imagesContainerElement;
-var $imagesContainer;
+var imagesType = 'recent';
+
+var $imagesContainerElement = null;
+var $imagesContainer = null;
+
+var $loadingBar = null;
+
+var loadingBarWaypoint;
+
+var waypointInterval = null;
 
 $(document).ready(function() {
     $imagesContainerElement = $('#imagesContainer');
-
-
+    $loadingBar = $('#loadingBar');
     if ($imagesContainerElement.length > 0) {
         $imagesContainer = $imagesContainerElement.masonry({
             itemSelector: '.grid-item',
             columnWidth: 200
         });
-        console.log($imagesContainer);
-        loadRecentImages(currentPage, perPage, $imagesContainer);
     }
+    initWaypoints();
 });
+
+function initWaypoints()
+{
+    loadingBarWaypoint = new Waypoint.Inview({
+        element: $loadingBar,
+        enter: function(direction) {
+            loadNextPage();
+        }
+    });
+    waypointInterval = setInterval(refreshWaypoints, 3000);
+}
+
+function refreshWaypoints()
+{
+    Waypoint.refreshAll();
+}
 
 function loadRecentImages(page, perPage, $element)
 {
@@ -49,6 +70,7 @@ function loadRecentImages(page, perPage, $element)
 
 function loadImages(method, page, perPage, $element)
 {
+    $loadingBar.addClass('active');
     var url = '/images/' + method + '/' + page + '/' + perPage;
     var data = {api_key: 'd23de45t56h4t3frrrer231232r'};
     $.get(url, data, function(data) {
@@ -60,6 +82,7 @@ function loadImages(method, page, perPage, $element)
             appendImages(images, $element);
         }
     }, 'json');
+    $loadingBar.removeClass('active');
 }
 
 function appendImages(images, $element)
@@ -72,6 +95,8 @@ function appendImages(images, $element)
 
     var $items = $(html);
     $element.masonryImagesReveal($items);
+
+    refreshWaypoints();
 }
 
 function getImageHtml(image)
@@ -106,4 +131,18 @@ function getImageProperty(propertyName, image, wildcardSearch)
     }
 
     return result;
+}
+
+function loadNextPage()
+{
+    currentPage++;
+    switch (imagesType) {
+        case 'recent':
+            loadRecentImages(currentPage, perPage, $imagesContainer);
+            break;
+
+        default:
+            console.log("Unhandled image type: " + imagesType);
+            break;
+    }
 }
