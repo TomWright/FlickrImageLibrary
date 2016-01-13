@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+
         <title>
             {% block title %}Flickr Image Library{% endblock %}
         </title>
@@ -14,29 +17,28 @@
         {% endblock %}
     </head>
     <body>
-        <section id="sidebar" class="col-md-3 fixed-position">
+
+        <div class="main container">
+
             {% include 'partials/header.php' %}
 
-            {% include 'partials/filters.php' %}
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="content main">
+                        {% block content %}{% endblock %}
+                    </section>
+                </div>
+            </div>
 
-            <footer id="footer">
-                <a href="https://github.com/TomWright">Tom Wright</a> - Flickr Image Library
-            </footer>
-        </section>
-
-        <section id="mainContentSection" class="col-md-9 normal-scrollable">
-            {% block content %}{% endblock %}
-        </section>
+        </div>
 
         {% block bodyStyles %}
             <link rel="stylesheet" href="/css/style.css" />
         {% endblock %}
         {% block bodyScripts %}
-            <script src="/js/imagesloaded.pkgd.min.js"></script>
-            <script src="/js/masonry.pkgd.min.js"></script>
-            <script src="/js/jquery.waypoints.min.js"></script>
-            <script src="/js/inview.js"></script>
+            <script src="/js/jquery.ba-throttle-debounce.min.js"></script>
             <script src="/js/main.js"></script>
         {% endblock %}
+
     </body>
 </html>

@@ -1,41 +1,61 @@
-.fixed-position {
-    position: fixed;
-    width: 25%;
-}
-
-.normal-scrollable {
-    float: right;
-    width: 75%;
-}
-
+/*
+* GENERAL STYLES
+*/
 body {
+    padding: 0;
+    margin: 0;
     background-color: #ffffff;
     color: #aeacb0;
 }
 
-body h1,
-body h2,
-body h3 {
-    color: #b6e7e3;
+div.container.main {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
 }
 
-section#mainContentSection {
-    padding-bottom: 10px;
+heading.main {
+    width: 100%;
+    text-align: center;
+    background: #fff;
 }
 
-section#sidebar {
-    color: #c2c2c3;
-    height: 100%;
-    background: #68696b url("/img/sidebar_bg.jpg") no-repeat center top;
-    background-size: cover;
+heading.main.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    z-index: 5;
 }
+
+section.filters.main {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+section.content.main {
+    position: relative;
+}
+
+/*
+* MASONRY STYLES
+*/
 
 div#imagesContainer {
     position: relative;
 }
 
+.gutter-sizer {
+    width: 1%;
+}
+
+.grid-sizer,
+.grid-item {
+    width: 24.2%;
+}
+
 div#imagesContainer div.image.grid-item {
-    width: 30%;
     position: relative;
     border: 1px solid #adb1b6;
     margin-bottom: 10px;
@@ -45,7 +65,7 @@ div#imagesContainer div.image.grid-item img {
     width: 100%;
 }
 
-#loadingBar {
+#flickrLoadingBar {
     text-align: center;
     display: block;
     height: 40px;
@@ -53,8 +73,47 @@ div#imagesContainer div.image.grid-item img {
     position: relative;
 }
 
-#loadingBar img {
+#flickrLoadingBar img {
     display: block;
     width: 40px;
     margin: 0 auto 10px auto;
+}
+
+/*
+* Start mobile friendly from here..?
+*/
+@media only screen and ( max-width: 1000px )
+{
+    .gutter-sizer {
+        width: 1%;
+    }
+
+    .grid-sizer,
+    .grid-item {
+        width: 32.7%;
+    }
+}
+
+@media only screen and ( max-width: 640px )
+{
+    .gutter-sizer {
+        width: 2%;
+    }
+
+    .grid-sizer,
+    .grid-item {
+        width: 49%;
+    }
+}
+
+@media only screen and ( max-width: 320px )
+{
+    .gutter-sizer {
+        width: 0%;
+    }
+
+    .grid-sizer,
+    .grid-item {
+        width: 100%;
+    }
 }
