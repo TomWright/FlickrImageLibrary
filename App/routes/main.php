@@ -33,6 +33,6 @@ define('REGEX_ALNUM_DASH', '[a-zA-Z0-9\-]+');
 define('REGEX_INT', '[0-9]{1,10}');
 define('REGEX_DIGIT', '\d+');
 
-$r->addRoute('GET', '/', 'home@helloWorld');
+$r->addRoute('GET', '/', '\\App\\Controllers\\Home@helloWorld');
 
-$r->addRoute('GET', '/images/fetch/{page:' . REGEX_DIGIT . '}/{perpage:' . REGEX_DIGIT . '}', 'flickr@fetchRecentImages');
+$r->addRoute('GET', '/images/fetch/{page:' . REGEX_DIGIT . '}/{perpage:' . REGEX_DIGIT . '}', '\App\\Controllers\\Flickr@fetchRecentImages');

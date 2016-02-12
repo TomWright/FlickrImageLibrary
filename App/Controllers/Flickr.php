@@ -1,10 +1,12 @@
 <?php
 
+namespace App\Controllers;
+
 use TomWright\ApiController;
 use Whirlpool\Config;
 use TomWright\Flickr\Api;
 
-class FlickrController extends ApiController
+class Flickr extends ApiController
 {
 
     protected $flickrSecret;

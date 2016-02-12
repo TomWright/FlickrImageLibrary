@@ -1,8 +1,10 @@
 <?php
 
+namespace App\Controllers;
+
 use TomWright\FrontEndController;
 
-class HomeController extends FrontEndController
+class Home extends FrontEndController
 {
 
     public function __construct()

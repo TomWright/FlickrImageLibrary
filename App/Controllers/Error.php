@@ -1,8 +1,11 @@
 <?php
 
+namespace App\Controllers;
+
+
 use TomWright\FrontEndController;
 
-class ErrorController extends FrontEndController
+class Error extends FrontEndController
 {
 
     public function __construct()
