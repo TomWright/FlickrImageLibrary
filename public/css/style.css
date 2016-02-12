@@ -55,14 +55,21 @@ div#imagesContainer {
     width: 24.2%;
 }
 
-div#imagesContainer div.image.grid-item {
+div#imagesContainer article.image.grid-item {
     position: relative;
-    border: 1px solid #adb1b6;
     margin-bottom: 10px;
 }
 
-div#imagesContainer div.image.grid-item img {
+div#imagesContainer article.image.grid-item img {
     width: 100%;
+    border: 1px solid #44464A;
+}
+
+div#imagesContainer article.image.grid-item footer {
+    width: 100%;
+    background: #44464A;
+    color: #fff;
+    padding: 0.1em 0.4em;
 }
 
 #flickrLoadingBar {

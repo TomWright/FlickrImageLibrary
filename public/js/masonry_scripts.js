@@ -112,12 +112,17 @@ function appendImages(images, $element)
 function getImageHtml(image)
 {
     var url = getImageProperty('url', image, true);
+    var ownerName = getImageProperty('ownername', image, false);
+    var title = getImageProperty('title', image, false);
     var html = "";
 
     if (url != null) {
-        html += "<div class='image grid-item'>" +
-            "<img src='" + url + "' />" +
-            "</div>";
+        html += "<article class='image grid-item'>" +
+            "<img alt='" + title + "' src='" + url + "' />" +
+            "<footer>" +
+            "<span>Uploaded by " + ownerName + "</span>" +
+            "</footer>" +
+            "</article>";
     }
 
     return html;
